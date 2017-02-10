@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic trianglify</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="body">
+    <fb:login-button
+        scope="public_profile,email"
+        onlogin="checkLoginState();">
+    </fb:login-button>
+    <div class="bg" data-ab-css-background data-ab-parent=".container"></div>
+    <h1 class="top">Wesołych</h1>
+    <div class="container" >
+        <svg class="heart" viewBox="0 0 32 29.6">
+            <defs>
+                <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0%" stop-color="#820808"/>
+                    <stop offset="100%" stop-color="#f03f3c"/>
+                </linearGradient>
+            </defs>
+            <path stroke-dasharray="2, 2" fill="url(#gradient)" d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+	c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+        </svg>
+
+    </div>
+    <h1 class="bottom">Walentynek</h1>
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/trianglify/dist/trianglify.min.js"></script>
+<script src="bower_components/adaptive.background/src/jquery.adaptive-backgrounds.js"></script>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '823856861100064',
+            cookie     : true,
+            xfbml      : true,
+            version    : 'v2.8'
+        });
+        FB.AppEvents.logPageView();
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<script src="script.js"></script>
+<!-- Piwik -->
+<script type="text/javascript">
+    var _paq = _paq || [];
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+        var u="//stats6.mydevil.net/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '224']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    })();
+</script>
+<noscript><p><img src="//stats6.mydevil.net/piwik.php?idsite=224" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+</body>
+</html>

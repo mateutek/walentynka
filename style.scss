@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css?family=Parisienne');
+
+*{
+  box-sizing: border-box;
+}
+body{
+  padding: 0;
+  margin: 0;
+  position: relative;
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  font-family: 'Parisienne', cursive;;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translateZ( -50px );
+  -moz-transform: translateZ( -50px );
+  -o-transform: translateZ( -50px );
+  transform: translateZ( -50px );
+  backface-visibility: visible;
+  font-size: 16px;
+}
+.bg{
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+div.container{
+  height: 50vh;
+  width: 50vw;
+  position: fixed;
+  top:calc(50% - 25vh);
+  left:calc(50% - 25vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //background-color: #fff;
+  background-image: none!important;
+}
+
+h1{
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  color:#fff;
+  text-shadow:
+          -1px -1px 0 #000,
+          1px -1px 0 #000,
+          -1px 1px 0 #000,
+          1px 1px 0 #000;
+  font-size: 5.7vw;
+  margin: 0;
+  &.top{
+    top:0 ;
+  }
+  &.bottom{
+    bottom:5px ;
+  }
+}
+
+.heart {
+  position: relative;
+  width: 50vh;
+  animation: heartbeat 1.5s ease-in-out infinite;
+  path{
+    stroke:#fff;
+    stroke-width: 0.25;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+
+  }
+}
+
+@keyframes heartbeat
+{
+  0%
+  {
+    transform: scale( .75 );
+  }
+  20%
+  {
+    transform: scale( 1 );
+  }
+  40%
+  {
+    transform: scale( .75 );
+  }
+  60%
+  {
+    transform: scale( 1 );
+  }
+  80%
+  {
+    transform: scale( .75 );
+  }
+  100%
+  {
+    transform: scale( .75 );
+  }
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  h1{
+    font-size:8vh ;
+    &.top{
+      top:2vh ;
+    }
+    &.bottom{
+      bottom:2vh;
+    }
+  }
+  .heart{
+    width: 100vh;
+  }
+  div.container{
+    height: 90vh;
+    width: 90vw;
+    position: fixed;
+    top:calc(50% - 45vh);
+    left:calc(50% - 45vw);
+  }
+}
