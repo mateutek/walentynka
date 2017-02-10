@@ -19,6 +19,7 @@ $(function () {
     var bodyHeight = $('body').height();
     var $_bg = $('.bg');
     var $_container = $('.container');
+
     var index = 1;
     var pi = 3.14;
     var frequency = 10;
@@ -56,9 +57,17 @@ function checkLoginState() {
 }
 
 function statusChangeCallback(response){
-    FB.api('/me', {fields: 'first_name',access_token:response.authResponse.accessToken}, function(response) {
-        $('.js-name').text('Waletynek, '+response.first_name+' !');
-    });
+    var $_fbBtn = $('.fb__btn');
+    console.log($_fbBtn);
+    console.log(response);
+    if(response.status == 'connected'){
+        FB.api('/me', {fields: 'first_name',access_token:response.authResponse.accessToken}, function(response) {
+            $('.js-name').text('Waletynek, '+response.first_name+' !');
+        });
+        $_fbBtn.hide();
+    }else{
+        $_fbBtn.show();
+    }
 }
 
 

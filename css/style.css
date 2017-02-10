@@ -21,7 +21,8 @@ body {
   -o-transform: translateZ(-50px);
   transform: translateZ(-50px);
   backface-visibility: visible;
-  font-size: 16px; }
+  font-size: 16px;
+  background-color: #651616; }
 
 .bg {
   position: fixed;
@@ -29,7 +30,8 @@ body {
   top: 0;
   left: 0;
   height: 100vh;
-  width: 100vw; }
+  width: 100vw;
+  background-color: #651616; }
 
 div.container {
   height: 50vh;
@@ -78,6 +80,12 @@ h1 {
     transform: scale(0.75); }
   100% {
     transform: scale(0.75); } }
+.fb__btn {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  display: none; }
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   h1 {
     font-size: 8vh; }
