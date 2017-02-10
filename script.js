@@ -42,7 +42,6 @@ $(function () {
 
     window.addEventListener("deviceorientation", handleOrientation, false);
     function handleOrientation(event) {
-        console.log(event);
         var tiltLR = event.alpha;
         var tiltFB = event.beta;
         var rotateLR = event.gamma;
@@ -57,9 +56,8 @@ function checkLoginState() {
 }
 
 function statusChangeCallback(response){
-    console.log(response);
-    FB.api('/me', {fields: 'last_name',access_token:response.authResponse.accessToken}, function(response) {
-        console.log(response);
+    FB.api('/me', {fields: 'first_name',access_token:response.authResponse.accessToken}, function(response) {
+        $('.js-name').text('Waletynek, '+response.first_name+' !');
     });
 }
 
